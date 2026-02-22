@@ -61,6 +61,32 @@ Identify active clusters by collecting relationships around key accounts in a ni
 4. Choose output format (usernames or IDs)
 5. Run and export dataset
 
+## Input schema (quick reference)
+
+| Field | Type | Description | Example |
+|---|---|---|---|
+| `userNameList` | `string[]` | Twitter/X usernames (without `@`) | `["elonmusk","nasa"]` |
+| `userIdList` | `string[]` | Numeric Twitter/X user IDs (optional) | `["44196397"]` |
+| `maxFollowers` | `number` | Max followers to collect per target | `10000` |
+| `maxFollowing` | `number` | Max following to collect per target | `10000` |
+| `getFollowers` | `boolean` | Enable followers collection | `true` |
+| `getFollowing` | `boolean` | Enable following collection | `true` |
+| `outputMode` | `string` | Output format: `usernames` or `ids` | `"ids"` |
+
+### Example input JSON
+
+```json
+{
+  "userNameList": ["elonmusk", "nasa"],
+  "userIdList": [],
+  "maxFollowers": 10000,
+  "maxFollowing": 10000,
+  "getFollowers": true,
+  "getFollowing": true,
+  "outputMode": "ids"
+}
+```
+
 ## Related actor (email extraction)
 
 If you also need email discovery from Twitter/X profiles, use:
